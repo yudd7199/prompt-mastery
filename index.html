@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Mastery Interactive</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin:0; padding:0; background:#fff; color:#111827; }
+    nav { display:flex; justify-content:space-between; padding:1rem 2rem; background:#4F46E5; color:white; }
+    nav a { color:white; margin-left:1rem; text-decoration:none; }
+    header { text-align:center; padding:4rem 2rem; background:linear-gradient(to right,#4F46E5,#7C3AED); color:white; }
+    section { padding:2rem; max-width:900px; margin:auto; }
+    input, button, textarea { padding:0.5rem; font-size:1rem; margin-top:0.5rem; width:100%; }
+    button { background:#4F46E5; color:white; border:none; cursor:pointer; margin-top:1rem; }
+    .output { background:#f0f0f0; padding:1rem; margin-top:1rem; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div>Prompt Mastery</div>
+    <div>
+      <a href="#guide">基础指南</a>
+      <a href="#advanced">高级技巧</a>
+      <a href="#generator">生成器</a>
+      <a href="#cases">案例</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>掌握 AI 提示词的艺术</h1>
+    <p>学习、创建、优化提示词，实时生成 AI 内容</p>
+  </header>
+
+  <section id="guide">
+    <h2>基础指南</h2>
+    <p>AI 提示词（Prompt）是你与 AI 沟通的方式，它决定了输出质量。</p>
+    <p>结构：上下文 + 指令 + 输出要求</p>
+  </section>
+
+  <section id="advanced">
+    <h2>高级技巧</h2>
+    <ul>
+      <li>多步提示词（Chain of Thought）</li>
+      <li>角色扮演（Role Prompting）</li>
+      <li>示例学习（Few-shot）</li>
+    </ul>
+  </section>
+
+  <section id="generator">
+    <h2>提示词生成器</h2>
+    <input type="text" id="promptInput" placeholder="输入主题，例如：AI未来">
+    <button onclick="generatePrompt()">生成提示词</button>
+    <div id="output" class="output"></div>
+  </section>
+
+  <section id="cases">
+    <h2>案例分享</h2>
+    <p>文本优化、代码生成、创意写作等案例展示</p>
+  </section>
+
+  <script>
+    function generatePrompt() {
+      const input = document.getElementById('promptInput').value;
+      if(!input) return alert('请输入主题');
+      const output = `你是一名专业内容创作者，请围绕“${input}”生成一段高质量内容，要求结构清晰、语言流畅，并适合大众阅读。`;
+      document.getElementById('output').innerText = output;
+    }
+  </script>
+</body>
+</html>
