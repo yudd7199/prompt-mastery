@@ -1,0 +1,41 @@
+body {margin:0; padding:0; font-family:'Inter',sans-serif; background:#f5f6fa; color:#1f2937; line-height:1.6;}
+nav {display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:#ffffffcc; backdrop-filter:blur(12px); position:sticky; top:0; box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+nav .logo {font-weight:600; font-size:1.2rem;}
+nav .links {display:flex; gap:1rem; align-items:center;}
+nav a {color:#4b5563; font-weight:500; transition:0.2s;}
+nav a:hover {color:#111827;}
+nav button {background:#111827;color:#fff;padding:0.5rem 1rem;border-radius:8px;font-size:0.9rem;}
+
+header{text-align:center; padding:5rem 2rem 3rem; max-width:800px; margin:0 auto;}
+header h1{font-size:2.6rem; font-weight:600;margin-bottom:1rem;}
+header p{font-size:1.1rem;color:#6b7280;margin-bottom:2rem;}
+header .btn{background:#4f46e5;color:white;padding:0.9rem 1.6rem;border-radius:12px;font-weight:500;}
+
+section{max-width:900px;margin:2rem auto;background:white;border-radius:20px;padding:2.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.06);}
+section h2{font-size:1.8rem;margin-bottom:1rem;}
+section h3{margin-top:1.5rem;margin-bottom:0.8rem;}
+section p,section li{color:#4b5563;}
+ul{padding-left:1.4rem;}
+li{margin-bottom:0.5rem;}
+
+input,textarea{width:100%;padding:1rem;border-radius:12px;border:1px solid #d1d5db;margin:0.8rem 0;font-size:1rem;outline:none;}
+input:focus,textarea:focus{border-color:#9ca3af;}
+
+.btn-action{background:#4f46e5;color:#fff;border:none;padding:0.8rem 1.2rem;border-radius:12px;font-weight:500;margin-top:0.5rem;}
+.btn-action:hover{background:#7c3aed; transform:translateY(-1px);}
+
+.output{background:#f9fafb;padding:1.4rem;border-radius:14px;margin-top:1rem;white-space:pre-wrap;}
+.flex-row{display:flex; flex-wrap:wrap; gap:1rem; margin-top:1rem;}
+.compare-card{flex:1; min-width:250px;background:#f9fafb;padding:1.4rem;border-radius:14px;}
+.compare-card h4{margin-bottom:0.6rem;font-size:1rem;}
+
+table{width:100%; border-collapse:collapse; margin-top:1rem;}
+th,td{padding:0.9rem; border:1px solid #e5e7eb; text-align:left;}
+th{background:#f9fafb;}
+
+@media(max-width:768px){
+  nav{padding:1rem;}
+  header{padding:3rem 1.5rem 2rem;}
+  header h1{font-size:2rem;}
+  section{margin:1rem;padding:1.8rem;}
+}

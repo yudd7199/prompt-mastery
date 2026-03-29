@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Prompt Mastery</div>
+  <div class="links">
+    <a href="#home">首页</a>
+    <a href="#guide">基础指南</a>
+    <a href="#templates">模板优化</a>
+    <a href="#simulator">交互模拟</a>
+    <a href="#comparison">对比示例</a>
+    <button id="langSwitch">EN</button>
+  </div>
+</nav>
+
+<header id="home">
+  <h1>掌握 AI 提示词的艺术</h1>
+  <p>逻辑清晰，循序渐进，帮助你高效设计专业提示词</p>
+  <a href="#templates" class="btn">开始使用</a>
+</header>
+
+<section id="guide">
+  <h2>基础指南</h2>
+  <p>优质提示词通常包含三部分：</p>
+  <ul>
+    <li>角色定位：为 AI 指定身份，如设计师、工程师、作家</li>
+    <li>任务指令：清晰说明需要完成的具体任务</li>
+    <li>格式与风格：长度、结构、语气、受众、输出形式</li>
+  </ul>
+  <h3>案例对比</h3>
+  <div class="flex-row">
+    <div class="compare-card">
+      <h4>普通提示词</h4>
+      <p>写一篇人工智能未来的文章</p>
+    </div>
+    <div class="compare-card">
+      <h4>优化提示词</h4>
+      <p>你是科技科普作者，用通俗语言写一篇500字左右关于AI未来的文章，适合高中生阅读，分点清晰</p>
+    </div>
+  </div>
+</section>
+
+<section id="templates">
+  <h2>提示词模板与优化</h2>
+  <p>输入主题，一键生成原始与优化版提示词：</p>
+  <input type="text" id="templateInput" placeholder="例如：AI未来、网页设计、读书笔记">
+  <button class="btn-action" onclick="generateTemplate()">生成提示词</button>
+  <div id="templateOutput" class="output"></div>
+</section>
+
+<section id="simulator">
+  <h2>交互模拟</h2>
+  <p>选择 AI 并输入指令：</p>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+    <select id="aiSelect">
+      <option value="openai">OpenAI</option>
+      <option value="doubao">豆包 AI</option>
+    </select>
+    <input type="text" id="simInput" placeholder="输入你的指令..." style="flex:1;">
+    <button class="btn-action" id="simulateBtn">生成</button>
+  </div>
+  <div class="output" id="simResult">
+    <span id="simStatus"></span>
+    <pre id="simContent"></pre>
+  </div>
+</section>
+
+<section id="comparison">
+  <h2>对比示例</h2>
+  <p>输入主题，自定义升级提示词，可生成对比输出：</p>
+  <input type="text" id="compareTopic" placeholder="例如：AI未来">
+  <input type="text" id="compareUpgrade" placeholder="升级提示词，可留空自动优化">
+  <button class="btn-action" onclick="generateComparison()">生成对比</button>
+  <div id="compareOutput"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
