@@ -4,283 +4,200 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prompt Mastery</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ======== 全局风格: Claude 风格 ======== */
 body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(160deg, #F8F9FB, #F0F2F5);
-  color: #1F2937;
-  line-height: 1.6;
-  padding-bottom: 4rem;
+  margin:0; padding:0;
+  font-family:'Inter',sans-serif;
+  background:#f5f6fa;
+  color:#1f2937;
+  line-height:1.6;
 }
+a {text-decoration:none; color:inherit;}
+button {cursor:pointer;}
 
 /* 导航 */
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 2rem;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  border-bottom: 1px solid #E5E7EB;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem 2rem;
+  background:#ffffffcc; backdrop-filter:blur(12px);
+  position:sticky; top:0; z-index:999;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  border-bottom:1px solid #e2e8f0;
 }
+nav .logo {font-weight:600; font-size:1.2rem; color:#111827;}
+nav .links {display:flex; gap:1rem; align-items:center;}
+nav a {color:#4b5563; font-weight:500; transition:0.2s;}
+nav a:hover {color:#111827;}
+nav button {background:#111827; color:#fff; border:none; padding:0.5rem 1rem; border-radius:8px; font-size:0.9rem;}
 
-nav .logo {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #111827;
-}
+/* Header */
+header {text-align:center; padding:5rem 2rem 3rem; max-width:800px; margin:0 auto;}
+header h1 {font-size:2.6rem; font-weight:600; margin-bottom:1rem; color:#111827;}
+header p {font-size:1.1rem; color:#6b7280; margin-bottom:2rem;}
+header .btn {background:#4f46e5; color:white; padding:0.9rem 1.6rem; border-radius:12px; font-weight:500;}
 
-nav .links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-nav a {
-  color: #4B5563;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
-}
-
-nav a:hover {
-  color: #1F2937;
-}
-
-.btn {
-  background: #111827;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.1rem;
-  border-radius: 10px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-size: 0.9rem;
-}
-
-.btn:hover {
-  background: #374151;
-  transform: translateY(-1px);
-}
-
-/* 头部 */
-header {
-  text-align: center;
-  padding: 5rem 2rem 3rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-header h1 {
-  font-size: 2.6rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  color: #111827;
-}
-
-header p {
-  font-size: 1.1rem;
-  color: #6B7280;
-  margin-bottom: 2rem;
-}
-
-header .btn {
-  padding: 0.9rem 1.6rem;
-  font-size: 1rem;
-}
-
-/* 内容区块 */
-section {
-  max-width: 860px;
-  margin: 0 auto 2rem;
-  background: #fff;
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-  border: 1px solid #F3F4F6;
-}
-
-section h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1.2rem;
-  color: #111827;
-}
-
-section h3 {
-  font-size: 1.2rem;
-  margin: 1.5rem 0 0.8rem;
-}
-
-section p, section li {
-  color: #4B5563;
-}
-
-ul {
-  padding-left: 1.4rem;
-  margin: 1rem 0;
-}
-
-li {
-  margin-bottom: 0.6rem;
-}
+/* Section */
+section {max-width:900px; margin:2rem auto; background:white; border-radius:20px; padding:2.5rem; box-shadow:0 8px 30px rgba(0,0,0,0.06);}
+section h2 {font-size:1.8rem; margin-bottom:1rem;}
+section h3 {margin-top:1.5rem; margin-bottom:0.8rem;}
+section p, section li {color:#4b5563;}
+ul {padding-left:1.4rem;}
+li {margin-bottom:0.5rem;}
 
 /* 输入框 */
-input, textarea {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 12px;
-  border: 1px solid #D1D5DB;
-  margin: 0.8rem 0 1.2rem;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
+input, textarea {width:100%; padding:1rem; border-radius:12px; border:1px solid #d1d5db; margin:0.8rem 0; font-size:1rem; outline:none;}
+input:focus, textarea:focus {border-color:#9ca3af;}
 
-input:focus, textarea:focus {
-  border-color: #9CA3AF;
-}
+/* 按钮 */
+.btn-action {background:#4f46e5; color:#fff; border:none; padding:0.8rem 1.2rem; border-radius:12px; font-weight:500; margin-top:0.5rem;}
+.btn-action:hover {background:#7c3aed; transform:translateY(-1px);}
 
-/* 输出卡片 */
-.output {
-  background: #F9FAFB;
-  padding: 1.4rem;
-  border-radius: 14px;
-  margin-top: 1rem;
-  white-space: pre-line;
-}
+/* 输出 */
+.output {background:#f9fafb; padding:1.4rem; border-radius:14px; margin-top:1rem; white-space:pre-wrap;}
 
 /* 对比卡片 */
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+.flex-row {display:flex; flex-wrap:wrap; gap:1rem; margin-top:1rem;}
+.compare-card {flex:1; min-width:250px; background:#f9fafb; padding:1.4rem; border-radius:14px;}
+.compare-card h4 {margin-bottom:0.6rem; font-size:1rem;}
 
-.compare-card {
-  flex: 1;
-  min-width: 260px;
-  background: #F9FAFB;
-  padding: 1.4rem;
-  border-radius: 14px;
-}
+/* Table */
+table {width:100%; border-collapse:collapse; margin-top:1rem;}
+th, td {padding:0.9rem; border:1px solid #e5e7eb; text-align:left;}
+th {background:#f9fafb;}
 
-.compare-card h4 {
-  margin-bottom: 0.8rem;
-  font-size: 1rem;
-}
-
-/* 表格 */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-th, td {
-  padding: 0.9rem;
-  border: 1px solid #E5E7EB;
-  text-align: left;
-}
-
-th {
-  background: #F9FAFB;
-}
-
-/* 移动端 */
-@media (max-width: 768px) {
-  nav {
-    padding: 1rem;
-  }
-  nav .links {
-    gap: 0.8rem;
-  }
-  header {
-    padding: 3rem 1.5rem 2rem;
-  }
-  header h1 {
-    font-size: 2rem;
-  }
-  section {
-    margin: 0 1rem 1.5rem;
-    padding: 1.8rem 1.5rem;
-  }
+/* Mobile */
+@media(max-width:768px){
+  nav {padding:1rem;}
+  header {padding:3rem 1.5rem 2rem;}
+  header h1 {font-size:2rem;}
+  section {margin:1rem; padding:1.8rem;}
 }
 </style>
 </head>
-
 <body>
 
 <nav>
   <div class="logo">Prompt Mastery</div>
   <div class="links">
-    <a href=" ">首页</a >
-    <a href="#guide">基础指南</a >
-    <a href="#templates">模板优化</a >
-    <a href="#simulator">交互模拟</a >
-    <a href="#comparison">对比示例</a >
-    <button class="btn" id="langSwitch">EN</button>
+    <a href="#home">首页</a>
+    <a href="#guide">基础指南</a>
+    <a href="#templates">模板优化</a>
+    <a href="#simulator">交互模拟</a>
+    <a href="#comparison">对比示例</a>
+    <button id="langSwitch">EN</button>
   </div>
 </nav>
 
 <header id="home">
   <h1>掌握 AI 提示词的艺术</h1>
-  <p>逻辑清晰，循序渐进，帮助你高效设计专业提示词</p >
-  <a href="#templates" class="btn">开始使用</a >
+  <p>逻辑清晰，循序渐进，帮助你高效设计专业提示词</p>
+  <a href="#templates" class="btn">开始使用</a>
 </header>
 
 <section id="guide">
   <h2>基础指南</h2>
-  <p>优质提示词通常包含三部分：</p >
+  <p>优质提示词通常包含三部分：</p>
   <ul>
-    <li><strong>角色定位</strong>：为 AI 指定身份，如设计师、工程师、作家</li>
-    <li><strong>任务指令</strong>：清晰说明需要完成的具体任务</li>
-    <li><strong>格式与风格</strong>：长度、结构、语气、受众、输出形式</li>
+    <li>角色定位：为 AI 指定身份，如设计师、工程师、作家</li>
+    <li>任务指令：清晰说明需要完成的具体任务</li>
+    <li>格式与风格：长度、结构、语气、受众、输出形式</li>
   </ul>
-
   <h3>案例对比</h3>
   <div class="flex-row">
     <div class="compare-card">
       <h4>普通提示词</h4>
-      <p>写一篇人工智能未来的文章</p >
+      <p>写一篇人工智能未来的文章</p>
     </div>
     <div class="compare-card">
       <h4>优化提示词</h4>
-      <p>你是科技科普作者，用通俗语言写一篇500字左右关于AI未来的文章，适合高中生阅读，分点清晰</p >
+      <p>你是科技科普作者，用通俗语言写一篇500字左右关于AI未来的文章，适合高中生阅读，分点清晰</p>
     </div>
   </div>
 </section>
 
 <section id="templates">
   <h2>提示词模板与优化</h2>
-  <p>输入主题，一键生成原始与优化版提示词：</p >
+  <p>输入主题，一键生成原始与优化版提示词：</p>
   <input type="text" id="templateInput" placeholder="例如：AI未来、网页设计、读书笔记">
-  <button class="btn" onclick="generateTemplate()">生成提示词</button>
+  <button class="btn-action" onclick="generateTemplate()">生成提示词</button>
   <div id="templateOutput" class="output"></div>
 </section>
 
 <section id="simulator">
   <h2>交互模拟</h2>
-  <p>输入你想让 AI 完成的任务：</p >
+  <p>选择 AI 并输入指令：</p>
+  <select id="aiSelect">
+    <option value="openai">OpenAI</option>
+    <option value="doubao">豆包 AI</option>
+  </select>
   <input type="text" id="simInput" placeholder="输入你的指令...">
-  <button class="btn" onclick="runSimulate()">模拟生成</button>
+  <button class="btn-action" onclick="runSimulate()">生成</button>
   <div class="output" id="simResult"></div>
 </section>
 
+<section id="comparison">
+  <h2>对比示例</h2>
+  <p>输入主题，自定义升级提示词，可生成对比输出：</p>
+  <input type="text" id="compareTopic" placeholder="例如：AI未来">
+  <input type="text" id="compareUpgrade" placeholder="升级提示词，可留空自动优化">
+  <button class="btn-action" onclick="generateComparison()">生成对比</button>
+  <div id="compareOutput"></div>
+</section>
+
 <script>
-// 切换语言（简易演示）
-document.getElementById('langSwitch').onclick = func
+// ====== 中英文切换 ======
+let lang = 'zh';
+const content = {
+  zh:{headerTitle:"掌握 AI 提示词的艺术", headerDesc:"逻辑清晰，循序渐进，帮助你高效设计专业提示词", headerBtn:"开始使用"},
+  en:{headerTitle:"Master the Art of AI Prompts", headerDesc:"Learn step-by-step to design effective prompts", headerBtn:"Get Started"}
+};
+function renderContent() {
+  document.querySelector('#home h1').innerText = content[lang].headerTitle;
+  document.querySelector('#home p').innerText = content[lang].headerDesc;
+  document.querySelector('#home .btn').innerText = content[lang].headerBtn;
+  document.getElementById('langSwitch').innerText = lang==='zh'?'EN':'中文';
+}
+document.getElementById('langSwitch').onclick = () => { lang=lang==='zh'?'en':'zh'; renderContent(); };
+renderContent();
+
+// ====== 模板生成 ======
+function generateTemplate(){
+  const topic=document.getElementById('templateInput').value.trim();
+  if(!topic){alert(lang==='zh'?'请输入主题':'Please enter a topic'); return;}
+  const originalPrompt = lang==='zh'?`写一篇关于“${topic}”的文章`:`Write an article about "${topic}"`;
+  const optimizedPrompt = lang==='zh'?
+    `你是科技科普作者，用通俗语言写一篇500字左右关于${topic}的文章，适合高中生阅读，分点清晰`:
+    `You are a tech writer, write a 500-word article about "${topic}", in plain language, suitable for high school students, clearly structured`;
+  document.getElementById('templateOutput').innerHTML =
+    `<div class="compare-card"><h4>${lang==='zh'?'原始提示词':'Original Prompt'}</h4><p>${originalPrompt}</p></div>
+     <div class="compare-card"><h4>${lang==='zh'?'优化提示词':'Optimized Prompt'}</h4><p>${optimizedPrompt}</p></div>`;
+}
+
+// ====== 交互模拟 ======
+function runSimulate(){
+  const instruction=document.getElementById('simInput').value.trim();
+  const ai=document.getElementById('aiSelect').value;
+  if(!instruction){alert(lang==='zh'?'请输入指令':'Please enter instruction'); return;}
+  let result=`【模拟生成】指令："${instruction}"，AI: ${ai} 生成内容...`;
+  document.getElementById('simResult').innerText=result;
+}
+
+// ====== 对比生成 ======
+function generateComparison(){
+  const topic=document.getElementById('compareTopic').value.trim();
+  let upgrade=document.getElementById('compareUpgrade').value.trim();
+  if(!topic){alert(lang==='zh'?'请输入主题':'Please enter topic'); return;}
+  if(!upgrade) upgrade=lang==='zh'?`你是一名AI教育导师，写一篇关于“${topic}”的教程，结构清晰`:`You are an AI tutor, write an article about "${topic}", clearly structured`;
+  const original=lang==='zh'?`写一篇关于“${topic}”的文章`:`Write an article about "${topic}"`;
+  const html=`<div class="flex-row">
+    <div class="compare-card"><h4>${lang==='zh'?'原始提示词':'Original'}</h4><p>${original}</p></div>
+    <div class="compare-card"><h4>${lang==='zh'?'升级提示词':'Upgraded'}</h4><p>${upgrade}</p></div>
+    <div class="compare-card"><h4>${lang==='zh'?'模拟输出':'Simulated Output'}</h4><p>${lang==='zh'?`本文详细讲解“${topic}”，包括步骤和示例`:`This article explains "${topic}", including steps and examples.`}</p></div>
+  </div>`;
+  document.getElementById('compareOutput').innerHTML=html;
+}
+</script>
+</body>
+</html>
